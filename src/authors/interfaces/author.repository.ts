@@ -17,6 +17,8 @@ export interface ISearchResult {
 }
 
 export interface IAuthorRepository {
+  sortableFields: string[]
+
   create(data: ICreateAuthor): Promise<Author>
   update(data: Author): Promise<Author>
   delete(id: string): Promise<Author>
