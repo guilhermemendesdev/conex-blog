@@ -5,9 +5,12 @@ import {
   ISearchResult,
 } from '../interfaces/author.repository'
 import { ICreateAuthor } from '../interfaces/create-author'
+import { PrismaService } from '@/database/prisma/prisma.service'
 
 export class AuthorPrismaRepository implements IAuthorRepository {
   sortableFields: string[] = ['name', 'email', 'createdAt']
+
+  constructor(private prisma: PrismaService) {}
 
   create(data: ICreateAuthor): Promise<Author> {
     throw new Error('Method not implemented.')
